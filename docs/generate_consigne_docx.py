@@ -32,7 +32,7 @@ GREEN = "E7F7F0"
 REDBG = "FBE9E9"
 FONT  = "Calibri"
 
-REPO = "https://github.com/aubinaso/supply-chain-security-project"
+REPO = "https://github.com/AboubakarHydara-ui/supply-chain-security-project"
 
 doc = Document()
 

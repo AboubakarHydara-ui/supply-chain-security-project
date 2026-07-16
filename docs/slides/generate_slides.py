@@ -367,7 +367,7 @@ bullets(s, Inches(7.15), Inches(2.8), Inches(5.3), Inches(3.6), [
     (1, "manifeste K8s, workflow CI, tous les labs"),
     "À produire : SBOM, scan, signature, attestations",
     "À personnaliser : remplacer <votre-user> sur votre fork",
-    "Repo à forker : github.com/aubinaso/…-security-project",
+    "Repo du rendu : github.com/AboubakarHydara-ui/supply-chain-security-project",
 ], size=15, gap=10)
 footer(s, 11)
 
