@@ -1,0 +1,18 @@
+Preuve - GitHub Actions Lab 5
+
+Workflow : supply-chain
+Run : #2
+Commit : 01fadf7484fc49e33e3b643fb0c7932e8fc54b2c
+URL : https://github.com/AboubakarHydara-ui/supply-chain-security-project/actions/runs/29500485235
+Statut : Success
+Duree : 1m43s
+
+Pipeline execute :
+- build image Docker
+- push GHCR
+- generation SBOM CycloneDX
+- scan Grype avec gate critical
+- signature keyless cosign via OIDC GitHub Actions
+- attestation SBOM
+- attestation provenance SLSA
+- verification keyless cosign

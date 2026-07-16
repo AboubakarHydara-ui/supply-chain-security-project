@@ -1,0 +1,23 @@
+Preuve - Verification cosign keyless
+
+Image : ghcr.io/aboubakarhydara-ui/scs-demo-app-ci@sha256:47e3dcee02bf0d6ce62e38e2379627db339a7ecdbc4b63e85b10815d741311ab
+
+Commande :
+COSIGN_DOCKER_MEDIA_TYPES=1 cosign-v2 verify \
+  --certificate-identity "https://github.com/AboubakarHydara-ui/supply-chain-security-project/.github/workflows/supply-chain.yml@refs/heads/main" \
+  --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+  "ghcr.io/aboubakarhydara-ui/scs-demo-app-ci@sha256:47e3dcee02bf0d6ce62e38e2379627db339a7ecdbc4b63e85b10815d741311ab"
+
+Sortie utile :
+Verification for ghcr.io/aboubakarhydara-ui/scs-demo-app-ci@sha256:47e3dcee02bf0d6ce62e38e2379627db339a7ecdbc4b63e85b10815d741311ab --
+The following checks were performed on each of these signatures:
+  - The cosign claims were validated
+  - Existence of the claims in the transparency log was verified offline
+  - The code-signing certificate was verified using trusted certificate authority certificates
+
+Issuer: https://token.actions.githubusercontent.com
+Subject: https://github.com/AboubakarHydara-ui/supply-chain-security-project/.github/workflows/supply-chain.yml@refs/heads/main
+githubWorkflowName: supply-chain
+githubWorkflowRepository: AboubakarHydara-ui/supply-chain-security-project
+githubWorkflowRef: refs/heads/main
+githubWorkflowSha: 01fadf7484fc49e33e3b643fb0c7932e8fc54b2c

@@ -1,0 +1,13 @@
+Preuve - Attaque registry non autorise refusee
+
+Commande :
+kubectl run proof-dockerhub --image="nginx:1.27" -n app
+
+Sortie :
+Error from server: admission webhook "validate.kyverno.svc-fail" denied the request:
+
+resource Pod/app/proof-dockerhub was blocked due to the following policies
+
+allowed-registries:
+  verifier-registry: 'validation error: Image refusée : seules les images de ghcr.io/aboubakarhydara-ui/
+    sont autorisées. rule verifier-registry failed at path /spec/containers/0/image/'

@@ -1,0 +1,26 @@
+# Secrets de signature — NE JAMAIS COMMITER
+cosign.key
+*.key
+
+# Sorties de labs
+sbom*.json
+provenance.json
+*.att
+*.sig
+
+# Python
+app/.venv/
+__pycache__/
+*.pyc
+
+# Slides & Word : on versionne les générateurs, PAS les binaires régénérables.
+*.pptx
+*.docx
+
+# QCM et corrigé : NE PAS publier dans le dépôt étudiant (contenu d'examen).
+evaluation/qcm.md
+evaluation/qcm-corrige.md
+
+# Divers
+.env
+*.log

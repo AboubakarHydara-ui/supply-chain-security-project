@@ -1,0 +1,13 @@
+Preuve - Attaque tag latest refusee
+
+Commande :
+kubectl run proof-latest --image="ghcr.io/aboubakarhydara-ui/other:latest" -n app
+
+Sortie :
+Error from server: admission webhook "validate.kyverno.svc-fail" denied the request:
+
+resource Pod/app/proof-latest was blocked due to the following policies
+
+disallow-latest-tag:
+  interdire-latest: 'validation error: Le tag :latest est interdit — utilisez un tag
+    versionné ou un digest (@sha256:...). rule interdire-latest failed at path /spec/containers/0/image/'

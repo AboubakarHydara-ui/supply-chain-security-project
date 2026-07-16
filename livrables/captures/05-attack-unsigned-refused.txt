@@ -1,0 +1,18 @@
+Preuve - Attaque image non signee refusee
+
+Commande :
+kubectl run proof-unsigned \
+  --image="ghcr.io/aboubakarhydara-ui/scs-demo-app@sha256:2b43c41f9cd6947b612fc464f20a011f1f6a969ba107fbe924b5b435963fc9fc" \
+  -n app
+
+Sortie :
+Error from server: admission webhook "mutate.kyverno.svc-fail" denied the request:
+
+resource Pod/app/proof-unsigned was blocked due to the following policies
+
+require-provenance-attestation:
+  verifier-provenance: 'image attestations verification failed, verifiedCount: 0,
+    requiredCount: 1, error: no matching attestations: '
+verify-image-signature:
+  verifier-signature-cosign: 'failed to verify image ghcr.io/aboubakarhydara-ui/scs-demo-app@sha256:2b43c41f9cd6947b612fc464f20a011f1f6a969ba107fbe924b5b435963fc9fc:
+    .attestors[0].entries[0].keyless: no signatures found'

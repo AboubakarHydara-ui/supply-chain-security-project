@@ -1,0 +1,20 @@
+Preuve - Image signee manuellement refusee apres passage en keyless CI
+
+Commande :
+kubectl run proof-manual-signed \
+  --image="ghcr.io/aboubakarhydara-ui/scs-demo-app@sha256:801aa3be81063db111931f0968ff70294139796a45ccc2de0b084de5695deb57" \
+  -n app
+
+Sortie :
+Error from server: admission webhook "mutate.kyverno.svc-fail" denied the request:
+
+resource Pod/app/proof-manual-signed was blocked due to the following policies
+
+require-provenance-attestation:
+  verifier-provenance: 'image attestations verification failed, verifiedCount: 0,
+    requiredCount: 1, error: no matching attestations: error verifying bundle: empty
+    key'
+verify-image-signature:
+  verifier-signature-cosign: 'failed to verify image ghcr.io/aboubakarhydara-ui/scs-demo-app@sha256:801aa3be81063db111931f0968ff70294139796a45ccc2de0b084de5695deb57:
+    .attestors[0].entries[0].keyless: no matching signatures: error verifying bundle:
+    empty key'

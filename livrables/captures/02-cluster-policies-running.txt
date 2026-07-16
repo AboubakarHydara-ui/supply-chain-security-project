@@ -1,0 +1,19 @@
+Preuve - Cluster Kubernetes et Kyverno
+
+Commande : kubectl get clusterpolicy
+
+NAME                             ADMISSION   BACKGROUND   READY   AGE   MESSAGE
+allowed-registries               true        true         True    60m   Ready
+disallow-latest-tag              true        true         True    60m   Ready
+require-provenance-attestation   true        false        True    60m   Ready
+verify-image-signature           true        false        True    60m   Ready
+
+Commande : kubectl get pods -n app
+
+NAME                            READY   STATUS    RESTARTS   AGE
+scs-demo-app-545ff7b44f-2sxhz   1/1     Running   0          6m51s
+scs-demo-app-545ff7b44f-psqmf   1/1     Running   0          7m1s
+
+Commande : curl -s localhost:8080/health
+
+{"status":"ok","version":"1.0.0"}
